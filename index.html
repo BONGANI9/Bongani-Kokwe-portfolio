@@ -166,53 +166,107 @@ body{scroll-behavior:smooth}
 <div class="p-4">
 
 <!-- Fixed Navbar -->
-<!-- Fixed Navbar -->
 <header class="fixed top-0 left-0 w-full bg-white border-b border-gray-200 z-50 shadow-md">
   <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-20">
-      <div class="flex items-center">
-        <img src="media/log.png" alt="Logo" class="w-14 h-14 rounded-full mr-4" loading="lazy" width="56" height="56"/>
-        <nav class="flex space-x-8">
-          <a href="#home" class="text-gray-700 hover:text-gray-900 font-semibold transition">Home</a>
-          <a href="#about" class="text-gray-700 hover:text-gray-900 font-semibold transition">About Me</a>
-          <a href="#portfolio" class="text-gray-700 hover:text-gray-900 font-semibold transition">Portfolio</a>
-          <a href="#services" class="text-gray-700 hover:text-gray-900 font-semibold transition">Services</a>
-          <a href="#contact" class="text-gray-700 hover:text-gray-900 font-semibold transition">Contact</a>
-        </nav>
-      </div>
-      <a href="#contact" class="absolute right-6 top-2/3 -translate-y-1/2 z-50 px-6 py-2 border-2 border-gray-900 rounded-full font-semibold hover:bg-gray-900 hover:text-white transition">Book A Call ↗</a>
+    <!-- Logo and Brand -->
+    <div class="flex items-center">
+      <img src="media/log.png" alt="Logo" class="w-14 h-14 rounded-full mr-4" loading="lazy" width="56" height="56"/>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#home" class="text-gray-700 hover:text-gray-900 font-semibold transition">Home</a>
+        <a href="#about" class="text-gray-700 hover:text-gray-900 font-semibold transition">About Me</a>
+        <a href="#portfolio" class="text-gray-700 hover:text-gray-900 font-semibold transition">Portfolio</a>
+        <a href="#services" class="text-gray-700 hover:text-gray-900 font-semibold transition">Services</a>
+        <a href="#contact" class="text-gray-700 hover:text-gray-900 font-semibold transition">Contact</a>
+      </nav>
     </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-700 hover:text-gray-900 hover:border-gray-900" aria-label="Menu">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Desktop CTA Button -->
+    <a href="#contact" class="hidden md:block absolute right-6 top-2/3 -translate-y-1/2 z-50 px-6 py-2 border-2 border-gray-900 rounded-full font-semibold hover:bg-gray-900 hover:text-white transition">Book A Call ↗</a>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg">
+    <nav class="px-4 pt-2 pb-4 space-y-2">
+      <a href="#home" class="block py-2 text-gray-700 hover:text-gray-900 font-semibold transition">Home</a>
+      <a href="#about" class="block py-2 text-gray-700 hover:text-gray-900 font-semibold transition">About Me</a>
+      <a href="#portfolio" class="block py-2 text-gray-700 hover:text-gray-900 font-semibold transition">Portfolio</a>
+      <a href="#services" class="block py-2 text-gray-700 hover:text-gray-900 font-semibold transition">Services</a>
+      <a href="#contact" class="block py-2 text-gray-700 hover:text-gray-900 font-semibold transition">Contact</a>
+      <a href="#contact" class="block mt-4 px-4 py-2 bg-gray-900 text-white text-center rounded-full font-semibold hover:bg-gray-800 transition">Book A Call ↗</a>
+    </nav>
+  </div>
 </header>
 <div style="height:80px;"></div>
 
 <!-- Home Page Content -->
-<section id="home" class="relative min-h-screen flex flex-col items-center justify-center text-white pt-2">
-<!-- Background Image - Load after page load -->
-<div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('media/WEBSITE BACKGROUND.webp');"></div>
+<section id="home" class="relative min-h-screen flex flex-col items-center justify-start text-white pt-2">
+<!-- Background Image - Desktop only -->
+<div class="absolute inset-0 z-0 bg-cover bg-center hidden md:block" style="background-image: url('media/WEBSITE BACKGROUND.webp');"></div>
 
-<!-- Main content container -->
-<div class="relative z-20 flex flex-col items-center justify-center w-full max-w-4xl h-full">
-<div class="relative w-full h-auto fade-in-up">
-<img src="media/Bongani2.webp" alt="Profile of Bongani Kokwe" class="w-full h-auto object-contain rounded-lg" loading="eager" fetchpriority="high">
-</div>
+<!-- Mobile Content Container -->
+<div class="w-full md:hidden bg-gray-50 pt-4">
+  <!-- Profile Image -->
+  <div class="px-4 mb-6">
+    <div class="relative w-full max-w-lg mx-auto fade-in-up">
+      <img src="media/Bongani2.webp" alt="Profile of Bongani Kokwe" 
+        class="w-full h-auto object-contain rounded-xl shadow-lg" 
+        loading="eager" fetchpriority="high">
+    </div>
+  </div>
+
+  <!-- Mobile Stats and Text -->
+  <div class="bg-white mx-4 p-6 rounded-xl shadow-md">
+    <div class="flex justify-center space-x-8 mb-6">
+      <div class="text-center">
+        <p class="text-2xl font-extrabold text-gray-900">+7</p>
+        <p class="text-gray-600 text-sm">Project completed</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl font-extrabold text-gray-900">+0</p>
+        <p class="text-gray-600 text-sm">Startup raised</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <h1 class="text-3xl font-light tracking-wide text-gray-900 mb-4">Welcome</h1>
+      <p class="text-base text-gray-700 font-normal mb-6">It's Bongani Kokwe, a digital Associate.</p>
+      <p class="text-gray-500 text-sm animate-bounce">Scroll down ↓</p>
+    </div>
+  </div>
 </div>
 
-<!-- Overlaid text content -->
-<div class="absolute inset-0 z-30 flex flex-col items-center justify-center text-center p-10">
-<div class="absolute left-0 top-2/3 -translate-y-1/2 p-8 flex flex-col items-start text-left z-30">
-<div class="flex space-x-4 mb-8">
-<div>
-<p class="text-2xl md:text-3xl font-extrabold text-gray-900">+7</p>
-<p class="text-gray-600 text-sm">Project completed</p>
-</div>
-<div>
-<p class="text-2xl md:text-3xl font-extrabold text-gray-900">+0</p>
-<p class="text-gray-600 text-sm">Startup raised</p>
-</div>
-</div>
-<h1 class="text-3xl md:text-5xl font-light tracking-wide text-gray-900 mb-10">Welcome</h1>
-<p class="text-base text-gray-700 font-normal mb-10">It's Bongani Kokwe, a digital Associate.</p>
-<p class="text-gray-500 text-sm">Scroll down ↓</p>
-</div>
+<!-- Desktop Content - Original Layout -->
+<div class="hidden md:block">
+  <div class="relative z-20 flex flex-col items-center justify-center w-full max-w-4xl h-full">
+    <div class="relative w-full h-auto fade-in-up">
+      <img src="media/Bongani2.webp" alt="Profile of Bongani Kokwe" class="w-full h-auto object-contain rounded-lg" loading="eager" fetchpriority="high">
+    </div>
+  </div>
+
+  <div class="absolute inset-0 z-30 flex flex-col items-center justify-center text-center p-10">
+    <div class="absolute left-0 top-2/3 -translate-y-1/2 p-8 flex flex-col items-start text-left z-30">
+      <div class="flex space-x-4 mb-8">
+        <div>
+          <p class="text-2xl md:text-3xl font-extrabold text-gray-900">+7</p>
+          <p class="text-gray-600 text-sm">Project completed</p>
+        </div>
+        <div>
+          <p class="text-2xl md:text-3xl font-extrabold text-gray-900">+0</p>
+          <p class="text-gray-600 text-sm">Startup raised</p>
+        </div>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-light tracking-wide text-gray-900 mb-10">Welcome</h1>
+      <p class="text-base text-gray-700 font-normal mb-10">It's Bongani Kokwe, a digital Associate.</p>
+      <p class="text-gray-500 text-sm">Scroll down ↓</p>
+    </div>
+  </div>
 </div>
 </section>
 
@@ -398,6 +452,37 @@ document.addEventListener('DOMContentLoaded', function() {
   fadeElements.forEach(el => {
     el.style.opacity = '1';
   });
+
+  // Mobile Menu Toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  }
 });
 </script>
 </body>

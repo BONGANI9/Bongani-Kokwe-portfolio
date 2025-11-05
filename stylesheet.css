@@ -302,9 +302,138 @@ transform: rotateY(180deg);
     transform: translateY(-50px);
     opacity: 0;
   }
-
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Mobile Navigation */
+  #mobile-menu {
+    transition: all 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  #mobile-menu.hidden {
+    display: none;
+  }
+
+  #mobile-menu:not(.hidden) {
+    max-height: 100vh;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  #mobile-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+
+  #mobile-menu a:hover {
+    background-color: #f3f4f6;
+  }
+
+  #mobile-menu a[href="#contact"]:last-child {
+    margin: 1rem 0.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  #mobile-menu-button {
+    padding: 0.5rem;
+    margin-right: -0.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+  }
+
+  #mobile-menu-button:hover {
+    background-color: #f3f4f6;
+  }
+
+  #mobile-menu-button:active {
+    background-color: #e5e7eb;
+  }
+
+  /* Hero Section */
+  #home {
+    min-height: auto;
+    padding: 2rem 1rem;
+    background: #f3f4f6;
+  }
+
+  #home .bg-cover {
+    display: none;
+  }
+
+  #home .relative.z-20 {
+    margin-bottom: 2rem;
+  }
+
+  #home .absolute.inset-0.z-30 {
+    position: relative;
+    padding: 0;
+  }
+
+  #home [class*="absolute"] {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+  }
+
+  #home .text-content {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    margin: 0 1rem;
+  }
+
+  #home .flex.space-x-4 {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  #home .text-3xl,
+  #home .text-base,
+  #home .text-sm {
+    text-align: center;
+  }
+
+  #home .mb-8,
+  #home .mb-10 {
+    margin-bottom: 1.5rem;
+  }
+
+  #home img {
+    max-height: 50vh;
+    width: auto;
+    margin: 0 auto;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  }
+
+  #home .text-2xl {
+    font-size: 1.75rem;
+  }
+
+  #home .text-sm {
+    font-size: 0.875rem;
+  }
+
+  /* Form Responsiveness */
+  .form {
+    width: 90%;
+    max-width: 350px;
+    padding: 20px;
+  }
+
+  .form::before {
+    display: none;
   }
 }
